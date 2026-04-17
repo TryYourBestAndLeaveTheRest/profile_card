@@ -1,20 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+    margin: 0;
 }
 
 [data-testid="test-profile-card"] {
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 30px;
     max-width: 400px;
-    width: 100%;
+    width: 90%;
     text-align: center;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+[data-testid="test-profile-card"]:hover {
+    transform: translateY(-5px);
+}
+
+[data-testid="test-user-name"] {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+[data-testid="test-user-bio"] {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
 }
 
 [data-testid="test-user-avatar"] {
@@ -22,7 +43,9 @@ body {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 [data-testid="test-user-social-links"] {
@@ -30,6 +53,57 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     margin-top: 20px;
+}
+
+[data-testid="test-user-social-links"] a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+[data-testid="test-user-social-links"] a:hover {
+    color: #fcb69f;
+}
+
+section {
+    margin-top: 20px;
+    text-align: left;
+}
+
+section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+}
+
+section ul li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 480px) {
+    [data-testid="test-profile-card"] {
+        padding: 20px;
+    }
+
+    [data-testid="test-user-name"] {
+        font-size: 1.3rem;
+    }
+
+    [data-testid="test-user-avatar"] {
+        width: 120px;
+        height: 120px;
+    }
 }
